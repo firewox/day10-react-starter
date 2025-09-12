@@ -1,10 +1,10 @@
 import Counter from "./Counter";
 
-function CounterGroup({count, handleCountChange, countSize}){
+function CounterGroup({handleCountChange, count}){
   return <div>
     {
-      new Array(countSize).fill(1).map((item, index) => {
-        return <Counter count={count} handleCountChange={handleCountChange} key={index}/>
+      new Array(count).fill(1).map((item, index) => {
+        return <Counter handleCountChange={handleCountChange} key={index}/>
       })
     }
   </div>
