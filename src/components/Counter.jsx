@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-function Counter(){
-  const [count, setCount] = useState(3);
+function Counter({count,handleCountChange}){
+//   const [count, setCount] = useState(3);
   function add(){
-    setCount(count + 1);
+    handleCountChange(count+1);
   }
   function sub(){
-    setCount(count - 1);
+    handleCountChange(count - 1);
   }
   return (
     <div className="counter">
