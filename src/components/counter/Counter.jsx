@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import {CounterContext} from '../../App';
 
 function Counter({handleCountChange}){
   let flag = 0;
