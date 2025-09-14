@@ -29,7 +29,7 @@ function TodoItem(props) {
           {props.todo.text}
         </span>
       </div>
-      <button className="delete-button" onClick={deleteTodo}>X</button>
+      <button className="default-button" onClick={deleteTodo}>X</button>
     </div>
   )
 }

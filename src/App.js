@@ -1,9 +1,9 @@
-import { createContext, useContext, useReducer } from "react";
+import { useReducer } from "react";
 import "./App.css"
 import {TodoContext, initState} from "./contexts/TodoContext"
 import todoReducer from "./reducers/TodoReducer"
 import TodoGroup from "./components/TodoGroup"
-
+import TodoAdd from "./components/TodoAdd"
 
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initState);
@@ -11,6 +11,7 @@ function App() {
     <div>
       <TodoContext.Provider value={{ state, dispatch }}>
         <TodoGroup />
+        <TodoAdd />
       </TodoContext.Provider>
     </div>
   );

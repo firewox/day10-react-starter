@@ -11,9 +11,18 @@
 .todo-item-container {
   display: flex;
 }
-.delete-button {
+.default-button {
   margin-top: 10px;
   margin-left: 10px;
+}
+.add-button {
+  border: 1px solid #6593F1;
+  background-color: #6593F1;
+  color: aliceblue;
+  width: 50px;
+}
+.todo-add-container {
+  display: flex;
 }
 
 .App {
