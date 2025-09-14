@@ -2,6 +2,9 @@
 
 function todoReducer(state, action) {
     switch (action.type) {
+        case "ADD_TODO":
+            const newTodo = { id: Date.now(), text: action.payload.text, done: false };
+            return [...state, newTodo];
         case "TOGGLE_TODO":
             /// copy
             const newState = [...state];
