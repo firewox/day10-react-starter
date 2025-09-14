@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Todo List 应用
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+一个基于 React 的简单待办事项应用，支持添加、标记完成和删除待办事项。
 
-## Available Scripts
+## 项目特性
 
-In the project directory, you can run:
+- ✅ 添加新的待办事项
+- ✅ 标记待办事项为已完成/未完成
+- ✅ 删除待办事项
+- ✅ 使用 React Context API 和 useReducer 进行状态管理
+- ✅ 简洁的用户界面设计
 
-### `npm start`
+## 技术栈
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**：19.1.1
+- **React DOM**：19.1.1
+- **React Scripts**：5.0.1
+- **CSS**：用于样式设计
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 安装指南
 
-### `npm test`
+### 前提条件
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+确保您的系统已安装以下软件：
+- [Node.js](https://nodejs.org/) (推荐 v16 或更高版本)
+- [npm](https://www.npmjs.com/) (通常随 Node.js 一起安装)
 
-### `npm run build`
+### 安装步骤
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. 克隆此仓库：
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/firewox/day10-react-starter.git
+cd day10-react-starter
+git checkout todolist
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. 安装依赖：
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 运行应用
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 开发模式
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+应用将在开发模式下运行。打开 [http://localhost:3000](http://localhost:3000) 即可在浏览器中查看。
 
-## Learn More
+### 构建生产版本
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+这将在 `build` 文件夹中生成优化后的生产版本。
 
-### Code Splitting
+## 项目结构
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+day10-react-starter/
+├── src/
+│   ├── components/         # React 组件
+│   │   ├── TodoAdd.jsx     # 添加待办事项组件
+│   │   ├── TodoGroup.jsx   # 待办事项列表组件
+│   │   └── TodoItem.jsx    # 单个待办事项组件
+│   ├── contexts/           # Context API 相关文件
+│   │   └── TodoContext.js  # Todo 上下文定义
+│   ├── reducers/           # Reducer 状态管理
+│   │   └── TodoReducer.js  # Todo 状态管理逻辑
+│   ├── App.css             # 主样式文件
+│   ├── App.js              # 应用主组件
+│   ├── index.css           # 全局样式
+│   └── index.js            # 应用入口文件
+├── package.json            # 项目配置和依赖
+└── README.md               # 项目说明文档
+```
 
-### Analyzing the Bundle Size
+## 使用说明
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **添加待办事项**：在输入框中输入待办事项内容，然后点击"add"按钮或按回车键。
+2. **标记完成状态**：点击待办事项文本，即可切换其完成状态（已完成/未完成）。
+3. **删除待办事项**：点击待办事项右侧的"X"按钮，即可删除该待办事项。
 
-### Making a Progressive Web App
+## 状态管理
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+本项目使用 React 的 Context API 和 useReducer 钩子进行状态管理：
 
-### Advanced Configuration
+- **TodoContext.js**：定义了全局上下文，提供状态和分发函数。
+- **TodoReducer.js**：包含处理状态更新的逻辑，支持添加、切换和删除待办事项的操作。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 许可证
 
-### Deployment
+本项目使用 [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.html) 许可证。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 贡献
 
-### `npm run build` fails to minify
+欢迎提交 Issue 和 Pull Request 来改进这个项目。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 致谢
+
+感谢所有为本项目做出贡献的开发者。
