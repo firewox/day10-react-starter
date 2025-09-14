@@ -1,6 +1,5 @@
-import {createContext, useContext, useReducer} from "react";
+import {createContext} from "react";
 import "../App.css"
-import { type } from "@testing-library/user-event/dist/type";
 
 export const initState = [
     {id: 1, text: "the first todo", done: true},

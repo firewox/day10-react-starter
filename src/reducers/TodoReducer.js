@@ -8,7 +8,8 @@ function todoReducer(state, action) {
             const id = action.payload.id;
             return newState.map((value) => {
                 if (value.id === id) {
-                    return { id,
+                    return {
+                        id,
                         text: value.text,
                         done: !value.done
                     };
@@ -16,6 +17,8 @@ function todoReducer(state, action) {
 
                 return value
             })
+        case "DELETE_TODO":
+            return state.filter((value) => value.id !== action.payload.id);
         default:
             return state;
     }

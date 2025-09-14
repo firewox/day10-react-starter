@@ -1,11 +1,11 @@
 
 import { useContext } from "react";
 import "../App.css"
-import {TodoContext} from "../contexts/TodoContext"
+import { TodoContext } from "../contexts/TodoContext"
 import TodoItem from "./TodoItem"
 
 function TodoGroup() {
-    const { state, dispatch } = useContext(TodoContext);
+    const { state } = useContext(TodoContext);
     return (
         <div>
             {state.map((item, index) => {

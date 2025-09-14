@@ -1,12 +1,19 @@
 .todo-item {
-  width: 320px;
+  width: 220px;
   padding: 8px;
-  border: 1px solid coral;
+  border: 1px solid #282c34;
   margin-top: 10px;
   text-align: center;
 }
 .todo-item .todo-done {
   text-decoration: line-through;
+}
+.todo-item-container {
+  display: flex;
+}
+.delete-button {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .App {
