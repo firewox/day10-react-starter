@@ -9,9 +9,7 @@ function TodoDetailPage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { state } = useContext(TodoContext);
-  console.log("id" + id);
-  console.log("state" + state);
-  const todo = state.filter((todo) => todo.id === parseInt(id))
+  const todo = state.filter((todo) => todo.id === id)
   if (todo.length === 0) {
     navigate(`/`);
   }

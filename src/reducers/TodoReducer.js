@@ -5,7 +5,7 @@ function todoReducer(state, action) {
         case "SET_TODOS":
             return action.payload;
         case "ADD_TODO":
-            const newTodo = { id: Date.now(), text: action.payload.text, done: false };
+            const newTodo = { id: action.payload.id, text: action.payload.text, done: action.payload.done };
             return [...state, newTodo];
         case "TOGGLE_TODO":
             /// copy

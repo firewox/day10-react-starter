@@ -1,22 +1,35 @@
-import { useContext } from "react";
+import {useContext} from "react";
 import "../App.css"
-import { TodoContext } from "../contexts/TodoContext"
-import { useNavigate } from "react-router"; 
+import {TodoContext} from "../contexts/TodoContext"
+import {useNavigate} from "react-router";
+import {api} from "../api/mockApi";
 
 function TodoItem(props) {
   const navigate = useNavigate();
   const { dispatch } = useContext(TodoContext)
   function makeAsDone() {
-    dispatch({
-      type: "TOGGLE_TODO",
-      payload: { id: props?.todo?.id }
+    api.put(`/todos/${props?.todo?.id}`, {done: !props?.todo?.done}).then((response) => {
+      if (response.status === 200) {
+        dispatch({
+          type: "TOGGLE_TODO",
+          payload: {id: props?.todo?.id}
+        })
+      }
+    }).catch((error) => {
+      console.log(error);
     })
   }
 
   function deleteTodo() {
-    dispatch({
-      type: "DELETE_TODO",
-      payload: { id: props.todo.id }
+    api.delete(`/todos/${props?.todo?.id}`).then((response) => {
+      if (response.status === 200) {
+        dispatch({
+          type: "DELETE_TODO",
+          payload: {id: props?.todo?.id}
+        })
+      }
+    }).catch((error) => {
+      console.log(error);
     })
   }
 
@@ -25,7 +38,7 @@ function TodoItem(props) {
       //   path: "/todos/:id",
       //   element: <TodoDetailPage/>
       // }
-    navigate(`/todos/${props.todo.id}`);
+    navigate(`/todos/${props?.todo?.id}`);
   }
 
   return (
@@ -33,10 +46,10 @@ function TodoItem(props) {
       <div className={"todo-item"}>
         <span
           className={
-            props.todo.done ? "todo-done" : ""
+            props?.todo?.done ? "todo-done" : ""
           }
           onClick={makeAsDone}>
-          {props.todo.text}
+          {props?.todo?.text}
         </span>
       </div>
       <button className="detail-button" onClick={detailTodo}>Details</button>
