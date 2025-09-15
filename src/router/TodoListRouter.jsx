@@ -1,7 +1,7 @@
 import "../App.css"
 import HomePage from "../pages/HomePage";
 import ErrorPage from "../pages/ErrorPage";
-import { NavLink, Outlet, RouterProvider, createBrowserRouter, useParams, useRouteError } from "react-router";
+import { NavLink, Outlet, RouterProvider, createBrowserRouter } from "react-router";
 import TodoDetailPage from "../pages/TodoDetailPage";
 import React, { useState } from 'react';
 import { Menu } from 'antd';
@@ -19,17 +19,17 @@ const items = [
         key: 'Done',
     },
     {
-        label: <NavLink to={"/errorPage"}>Error Pages</NavLink>,
-        key: 'Error',
-    },
-    {
         label: <NavLink to={"/todos/1"}>Detail Pages</NavLink>,
         key: 'Detail',
     },
     {
         label: <NavLink to={"/us"}>About&Contact Us</NavLink>,
         key: 'About Us',
-    }
+    },
+    {
+        label: <NavLink to={"/errorPage"}>Error Pages</NavLink>,
+        key: 'Error',
+    },
 ];
 
 function DefaultLayout() {

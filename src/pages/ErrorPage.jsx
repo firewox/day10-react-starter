@@ -68,7 +68,7 @@ function ErrorPage() {
                             borderRadius: '6px',
                             overflowX: 'auto'
                         }}>
-              {JSON.stringify(error, null, 2)}
+              {JSON.stringify(error, "", 2)}
             </pre>
                     </Paragraph>
                     <Paragraph>

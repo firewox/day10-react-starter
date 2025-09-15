@@ -58,12 +58,12 @@ export const AboutUsPage = () => {
                 </Col>
                 <Col xs={24} md={8}>
                     <Card title="商务合作" bordered={false}>
-                        <Paragraph>business@example.com</Paragraph>
+                        <Paragraph>jade.li@oocl.com</Paragraph>
                     </Card>
                 </Col>
                 <Col xs={24} md={8}>
                     <Card title="技术支持" bordered={false}>
-                        <Paragraph>support@example.com</Paragraph>
+                        <Paragraph>jade.li@oocl.com</Paragraph>
                     </Card>
                 </Col>
             </Row>
@@ -74,7 +74,7 @@ export const AboutUsPage = () => {
                 <Col span={24}>
                     <Card title="公司地址" bordered={false}>
                         <Paragraph>
-                            上海市浦东新区张江高科技园区XX路XX号
+                            珠海市高新区南方软件园区
                         </Paragraph>
                         <Paragraph>
                             北京市朝阳区望京SOHO T1座XX层
