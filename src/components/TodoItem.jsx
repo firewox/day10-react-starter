@@ -4,6 +4,7 @@ import {TodoContext} from "../contexts/TodoContext"
 import {useNavigate} from "react-router";
 import {useTodoService} from "../useTodoService";
 import {List, Typography} from 'antd';
+import TodoEdit from "./TodoEdit";
 
 const {Text, Link} = Typography;
 
@@ -49,7 +50,7 @@ function TodoItem(props) {
 
   return (
       <List.Item
-          actions={[<a key="list-loadmore-edit">Edit</a>,
+          actions={[<TodoEdit todo={props?.todo}/>,
             <a key="list-loadmore-details" onClick={detailTodo}>Details</a>,
             <button onClick={deleteTodo}>X</button>]}
       >

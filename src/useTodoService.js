@@ -15,10 +15,15 @@ export function useTodoService() {
     const postTodos = (text) => {
         return api.post("/todos", {text: text, done: false}).then(response => response.data);
     }
+    const updateTodoName = (props) => {
+        console.log("props,",props);
+        return api.put(`/todos/${props?.todo?.id}`, {text: props?.todo?.text}).then(response => response.data);
+    }
     return {
         loadTodos,
         putTodo,
         deleteTodoRequest,
-        postTodos
+        postTodos,
+        updateTodoName
     }
 }
