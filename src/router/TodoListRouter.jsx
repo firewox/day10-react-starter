@@ -5,6 +5,7 @@ import { NavLink, Outlet, RouterProvider, createBrowserRouter, useParams, useRou
 import TodoDetailPage from "../pages/TodoDetailPage";
 import React, { useState } from 'react';
 import { Menu } from 'antd';
+import {AboutUsPage} from "../pages/AboutUsPage";
 
 
 const items = [
@@ -19,6 +20,10 @@ const items = [
     {
         label: <NavLink to={"/todos/1"}>Detail Pages</NavLink>,
         key: 'Detail',
+    },
+    {
+        label: <NavLink to={"/us"}>About&Contact Us</NavLink>,
+        key: 'About Us',
     }
 ];
 
@@ -55,7 +60,11 @@ const router = createBrowserRouter([
       {
         path: "/todos/:id",
         element: <TodoDetailPage/>
-      }
+      },
+        {
+            path: "/us",
+            element: <AboutUsPage/>
+        }
     ]
   }
 ])
