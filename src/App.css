@@ -34,3 +34,6 @@
   align-items: center;
   min-height: 100vh;
 }
+.router-container {
+  color: #6593F1;
+}

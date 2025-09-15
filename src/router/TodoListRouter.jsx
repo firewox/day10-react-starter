@@ -7,7 +7,7 @@ import TodoDetailPage from "../pages/TodoDetailPage";
 
 function DefaultLayout() {
   return (
-    <div>
+    <div className="router-container">
       <header>
         <nav>
           <ul>

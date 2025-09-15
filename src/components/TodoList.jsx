@@ -1,8 +1,5 @@
 import TodoGroup from "./TodoGroup";
 import TodoAdd from "./TodoAdd";
-import {TodoContext,initState} from "../contexts/TodoContext";
-import useReducer from "react";
-import todoReducer from "../reducers/TodoReducer";
 
 function TodoList(){
     return (
