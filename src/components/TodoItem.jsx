@@ -7,7 +7,7 @@ function TodoItem(props) {
   function makeAsDone() {
     dispatch({
       type: "TOGGLE_TODO",
-      payload: { id: props.todo.id }
+      payload: { id: props?.todo?.id }
     })
   }
 
