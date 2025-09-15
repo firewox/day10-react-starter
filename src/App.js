@@ -1,13 +1,16 @@
-import { useReducer } from "react";
 import "./App.css"
-import { initState } from "./contexts/TodoContext"
-import todoReducer from "./reducers/TodoReducer"
-import TodoList from "./components/TodoList";
+import { NavLink, Outlet, RouterProvider, createBrowserRouter, useParams, useRouteError } from "react-router";
+import  todoReducer  from "./reducers/TodoReducer";
+import {useReducer} from "react";
+import { TodoContext,initState } from "./contexts/TodoContext";
+import TodoRouter from "./router/TodoListRouter";
 
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initState);
   return (
-      <TodoList state={state} dispatch={dispatch} />
+    <TodoContext.Provider value={{ state, dispatch }}>
+      <TodoRouter />
+    </TodoContext.Provider>
   );
 }
 
