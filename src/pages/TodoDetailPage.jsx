@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import { useContext } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 import TodoItem from "../components/TodoItem";
+import {List} from "antd";
 
 
 function TodoDetailPage() {
@@ -16,7 +17,14 @@ function TodoDetailPage() {
   return (
   <div className="App">
     <div className="todo-item-container">
-    <TodoItem todo={todo[0]} />
+      <List
+          className="demo-loadmore-list"
+          itemLayout="horizontal"
+          dataSource={todo}
+          renderItem={item => (
+              <TodoItem todo={item} key={item.id} />
+          )}
+      />
   </div>
   </div>
 )
