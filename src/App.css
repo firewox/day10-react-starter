@@ -4,6 +4,8 @@
   border: 1px solid #282c34;
   margin-top: 10px;
   text-align: center;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .todo-item .todo-done {
   text-decoration: line-through;
