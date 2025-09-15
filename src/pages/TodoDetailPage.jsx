@@ -1,22 +1,27 @@
 import "../App.css"
-import { NavLink, Outlet, RouterProvider, createBrowserRouter, useParams, useRouteError } from "react-router";
-import { todoReducer, useReducer,useContext } from "react";
+import { useNavigate, useParams } from "react-router";
+import { useContext } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 import TodoItem from "../components/TodoItem";
 
 
 function TodoDetailPage() {
-  const {id} = useParams();
-  const {state,dispatch} = useContext(TodoContext);
-  console.log("id"+id);
-  console.log("state"+state);
-  const todo = state.filter((todo)=>todo.id===parseInt(id))
-  if (todo.length===0) {
-    return <div>Todo not found</div>
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const { state } = useContext(TodoContext);
+  console.log("id" + id);
+  console.log("state" + state);
+  const todo = state.filter((todo) => todo.id === parseInt(id))
+  if (todo.length === 0) {
+    navigate(`/`);
   }
-  return <div>
+  return (
+  <div className="App">
+    <div className="todo-item-container">
     <TodoItem todo={todo[0]} />
   </div>
+  </div>
+)
 }
 
 export default TodoDetailPage;

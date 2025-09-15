@@ -16,6 +16,15 @@
 .default-button {
   margin-top: 10px;
   margin-left: 10px;
+  background-color: coral;
+  border: 1px solid coral;
+}
+.detail-button {
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #6593F5;
+  border: 1px solid #6593F6;
+  color: aliceblue;
 }
 .add-button {
   border: 1px solid #6593F1;

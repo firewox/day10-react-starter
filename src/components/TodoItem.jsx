@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import "../App.css"
 import { TodoContext } from "../contexts/TodoContext"
+import { useNavigate } from "react-router"; 
 
 function TodoItem(props) {
+  const navigate = useNavigate();
   const { dispatch } = useContext(TodoContext)
   function makeAsDone() {
     dispatch({
@@ -18,6 +20,14 @@ function TodoItem(props) {
     })
   }
 
+  function detailTodo() {
+    //跳转到{
+      //   path: "/todos/:id",
+      //   element: <TodoDetailPage/>
+      // }
+    navigate(`/todos/${props.todo.id}`);
+  }
+
   return (
     <div className="todo-item-container">
       <div className={"todo-item"}>
@@ -29,6 +39,7 @@ function TodoItem(props) {
           {props.todo.text}
         </span>
       </div>
+      <button className="detail-button" onClick={detailTodo}>Details</button>
       <button className="default-button" onClick={deleteTodo}>X</button>
     </div>
   )
