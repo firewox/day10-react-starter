@@ -6,6 +6,7 @@ import TodoDetailPage from "../pages/TodoDetailPage";
 import React, { useState } from 'react';
 import { Menu } from 'antd';
 import {AboutUsPage} from "../pages/AboutUsPage";
+import DonePage from "../pages/DonePage";
 
 
 const items = [
@@ -14,7 +15,11 @@ const items = [
         key: 'Home',
     },
     {
-        label: <NavLink to={"/1"}>Error Pages</NavLink>,
+        label: <NavLink to={"/done"}>Done List</NavLink>,
+        key: 'Done',
+    },
+    {
+        label: <NavLink to={"/errorPage"}>Error Pages</NavLink>,
         key: 'Error',
     },
     {
@@ -51,12 +56,19 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <DefaultLayout />,
-    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <HomePage/>
       },
+        {
+            path: "/done",
+            element: <DonePage/>
+        },
+        {
+            path: "/errorPage",
+            element: <ErrorPage/>
+        },
       {
         path: "/todos/:id",
         element: <TodoDetailPage/>
