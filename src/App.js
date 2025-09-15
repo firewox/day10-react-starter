@@ -5,12 +5,16 @@ import {initState, TodoContext} from "./contexts/TodoContext";
 import TodoRouter from "./router/TodoListRouter";
 import {api} from "./api/mockApi";
 
+const loadTodos = () => {
+    return api.get("/todos").then(response => response.data)
+}
+
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initState);
     useEffect(() => {
-        api.get("/todos").then(response => {
-            console.log(response.data);
-            dispatch({type: "SET_TODOS", payload: response.data});
+        loadTodos().then(data => {
+            console.log(data);
+            dispatch({type: "SET_TODOS", payload: data});
         }).catch(error => {
             console.log(error)
         })
