@@ -7,6 +7,13 @@ function todoReducer(state, action) {
         case "ADD_TODO":
             const newTodo = { id: action.payload.id, text: action.payload.text, done: action.payload.done };
             return [...state, newTodo];
+        case "UPDATE_TODO":
+            return state.map((value) => {
+                if (value.id === action.payload.id) {
+                    return action.payload
+                }
+                return value
+            });
         case "TOGGLE_TODO":
             /// copy
             const newState = [...state];
