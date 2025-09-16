@@ -5,7 +5,7 @@ export function useTodoService() {
         return api.get("/todos").then(response => response.data)
     }
     const putTodo = (props) => {
-        return api.put(`/todos/${props?.todo?.id}`, {done: !props?.todo?.done}).then(response => response.data);
+        return api.put(`/todos/${props?.todo?.id}`, {text: props?.todo?.text, done: !props?.todo?.done}).then(response => response.data);
     }
 
     const deleteTodoRequest = (props) => {
@@ -17,7 +17,7 @@ export function useTodoService() {
     }
     const updateTodoName = (props) => {
         console.log("props,",props);
-        return api.put(`/todos/${props?.todo?.id}`, {text: props?.todo?.text}).then(response => response.data);
+        return api.put(`/todos/${props?.todo?.id}`, {text: props?.todo?.text, done: props?.todo?.done}).then(response => response.data);
     }
     return {
         loadTodos,

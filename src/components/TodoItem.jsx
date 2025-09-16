@@ -31,7 +31,7 @@ function TodoItem(props) {
 
   function deleteTodo() {
     deleteTodoRequest(props).then((response) => {
-      if (response.status === 200) {
+      if (response.status === 204) {
         dispatch({
           type: "DELETE_TODO",
           payload: {id: props?.todo?.id}

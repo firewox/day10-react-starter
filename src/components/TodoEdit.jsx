@@ -19,7 +19,7 @@ export const TodoEdit = ({todo}) => {
             setOpen(false);
             setConfirmLoading(false);
         }
-        updateTodoName({todo: {id:todo?.id, text:inputValue}}).then((todo) => {
+        updateTodoName({todo: {id:todo?.id, text:inputValue, done:todo?.done}}).then((todo) => {
             dispatch({
                 type: "UPDATE_TODO",
                 payload: todo
