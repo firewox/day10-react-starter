@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import "../App.css"
 import {TodoContext} from "../contexts/TodoContext"
 import {useNavigate} from "react-router";
@@ -12,20 +12,22 @@ function TodoItem(props) {
   const {putTodo, deleteTodoRequest} = useTodoService();
   const navigate = useNavigate();
   const { dispatch } = useContext(TodoContext)
-  const [updatedTodoDone, setUpdatedTodoDone] = useState(props?.todo?.done || false);
+  const [updatedTodoDone, setUpdatedTodoDone] = useState(props?.todo?.done);
   function makeAsDone() {
-    let updatedTodo = {...props.todo}
     putTodo(props).then((todo) => {
       dispatch({
         type: "UPDATE_TODO",
         payload: todo
       });
-      updatedTodo = todo;
+      props.todo = todo;
     }).catch((error) => {
       console.log(error);
     })
-    setUpdatedTodoDone(updatedTodo.done)
   }
+
+  useEffect(() => {
+    setUpdatedTodoDone(props?.todo?.done)
+  }, [props?.todo?.done]);
 
   function deleteTodo() {
     deleteTodoRequest(props).then((response) => {

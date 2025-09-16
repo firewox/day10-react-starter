@@ -25,11 +25,7 @@ const items = [
     {
         label: <NavLink to={"/us"}>About&Contact Us</NavLink>,
         key: 'About Us',
-    },
-    {
-        label: <NavLink to={"/errorPage"}>Error Pages</NavLink>,
-        key: 'Error',
-    },
+    }
 ];
 
 function DefaultLayout() {
@@ -57,6 +53,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <DefaultLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -65,10 +62,6 @@ const router = createBrowserRouter([
         {
             path: "/done",
             element: <DonePage/>
-        },
-        {
-            path: "/errorPage",
-            element: <ErrorPage/>
         },
       {
         path: "/todos/:id",
