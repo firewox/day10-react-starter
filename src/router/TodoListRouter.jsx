@@ -47,6 +47,7 @@ function DefaultLayout() {
       <main>
         <Outlet />
       </main>
+        {/*<Footer>footer</Footer>*/}
     </div>
   );
 }
